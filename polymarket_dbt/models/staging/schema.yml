@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_markets
+    description: "Cleaned and categorized Polymarket prediction markets"
+    columns:
+      - name: market_id
+        description: "Unique market identifier"
+        tests:
+          - not_null
+          - unique
+      - name: question
+        tests:
+          - not_null
+      - name: category
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["politics", "sports", "crypto", "finance", "tech", "geopolitics", "other"]
+      - name: volume
+        tests:
+          - not_null
+      - name: liquidity
+        tests:
+          - not_null

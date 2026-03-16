@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fct_category_volume
+    description: "Trading volume and liquidity aggregated by market category"
+    columns:
+      - name: category
+        tests:
+          - not_null
+          - unique
+      - name: total_volume
+        tests:
+          - not_null
+
+  - name: fct_top_markets
+    description: "Top 100 markets ranked by total and 24hr volume"
+    columns:
+      - name: market_id
+        tests:
+          - not_null
+          - unique
+      - name: volume_rank
+        tests:
+          - not_null
+
+  - name: fct_market_timing
+    description: "Market closing timeline breakdown by category"
+    columns:
+      - name: category
+        tests:
+          - not_null
