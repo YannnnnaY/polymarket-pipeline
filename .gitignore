@@ -1,4 +1,6 @@
 venv/
 __pycache__/
 *.duckdb
-data/
+data/raw_markets.parquet
+data/processed_markets.parquet
+data/category_summary.parquet

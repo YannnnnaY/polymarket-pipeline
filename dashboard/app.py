@@ -11,12 +11,18 @@ st.markdown("Built with Python, PySpark, dbt, DuckDB, and Streamlit")
 
 @st.cache_data
 def load_data():
+    '''
     conn = duckdb.connect(DB_PATH, read_only=True)
     categories = conn.execute("SELECT * FROM fct_category_volume").df()
     top_markets = conn.execute("SELECT * FROM fct_top_markets").df()
     timing = conn.execute("SELECT * FROM fct_market_timing").df()
     conn.close()
+    '''
+    categories = pd.read_csv("data/exports/fct_category_volume.csv")
+    top_markets = pd.read_csv("data/exports/fct_top_markets.csv")
+    timing = pd.read_csv("data/exports/fct_market_timing.csv")
     return categories, top_markets, timing
+
 
 categories, top_markets, timing = load_data()
 
