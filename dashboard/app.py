@@ -1,9 +1,9 @@
 import streamlit as st
-import duckdb
+# import duckdb
 import pandas as pd
 import plotly.express as px
 
-DB_PATH = "/Users/bliu/LearningProjects/polymarket-pipeline/data/polymarket.duckdb"
+# DB_PATH = "/Users/bliu/LearningProjects/polymarket-pipeline/data/polymarket.duckdb"
 
 st.set_page_config(page_title="Polymarket Analytics", layout="wide")
 st.title("Polymarket Prediction Market Analytics")
